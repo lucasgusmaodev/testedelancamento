@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Clínicas</title>
+
+<style>
+
+/* VARIÁVEIS (IGUAL AO SITE PRINCIPAL) */
+:root {
+    --bg-main: #ffffff;
+    --bg-soft: #f7f7f7;
+    --card-bg: #ffffff;
+
+    --primary: #ff7a18;
+    --primary-hover: #e56710;
+
+    --text-main: #1a1a1a;
+    --text-soft: #555;
+    --text-muted: #888;
+
+    --border: #e5e5e5;
+}
+
+/* GERAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+
+body{
+    background:var(--bg-main);
+    color:var(--text-main);
+    line-height:1.6;
+}
+
+/* HEADER (PADRÃO) */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--border);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    color:var(--primary);
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+nav a{
+    color:var(--text-soft);
+    text-decoration:none;
+    margin-left:20px;
+    font-size:13px;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+/* TÍTULO (ESTILO SEÇÃO) */
+.titulo{
+    text-align:center;
+    padding:80px 8% 40px;
+}
+
+.titulo h1{
+    font-size:32px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    position:relative;
+}
+
+.titulo h1::after{
+    content:'';
+    width:50px;
+    height:3px;
+    background:var(--primary);
+    position:absolute;
+    bottom:-10px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.titulo p{
+    color:var(--text-soft);
+    margin-top:20px;
+}
+
+/* GRID */
+.grid{
+    padding:40px 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* CARD (IGUAL AO LUGARES) */
+.card{
+    background:var(--card-bg);
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    transition:0.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* FOTO */
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* CONTEÚDO */
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:var(--text-soft);
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+/* BOTÕES (PADRÃO) */
+.buttons{
+    margin-top:12px;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--primary);
+    color:#fff;
+    padding:8px 14px;
+    margin-right:8px;
+    margin-top:5px;
+    text-decoration:none;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:var(--primary-hover);
+}
+
+.btn-map{
+    background:#eee;
+    color:var(--text-main);
+}
+
+.btn-map:hover{
+    background:#ddd;
+}
+
+/* MINI CARDS (SERVIÇOS ESSENCIAIS) */
+
+.mini-grid{
+    padding:20px 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.mini-card{
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:15px;
+    background:#fafafa;
+    transition:0.2s;
+}
+
+.mini-card:hover{
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.mini-card h4{
+    font-size:15px;
+    margin-bottom:8px;
+    color:var(--primary);
+}
+
+.mini-card p{
+    font-size:13px;
+    color:var(--text-soft);
+    margin-bottom:5px;
+}
+
+.mini-buttons{
+    margin-top:10px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:50px;
+    background:#f2f2f2;
+    border-top:1px solid var(--border);
+    margin-top:50px;
+    color:var(--text-muted);
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="logo">Icoaraci</div>
+
+<nav>
+
+<a href="index.html">Início</a>
+
+</nav>
+
+</header>
+
+
+
+<section class="titulo">
+
+<h1>Clínicas</h1>
+
+<p>Algumas opções de clínicas médicas, laboratórios de exames, odontológicas etc. em Icoaraci.</p>
+
+</section>
+
+
+
+<section class="grid">
+
+
+
+<!-- RESTAURANTE 1 -->
+
+<div class="card">
+
+<img src="maissude.jpeg">
+
+<div class="card-content">
+
+<h3>Rede Mais Saúde</h3>
+<p>Consultas com médicos especialistas, estrutura moderna e exames de check-up completos para cuidar da sua saúde.</p>
+
+<div class="buttons">
+
+<a href="https://www.clinicaredemaissaude.com.br/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Clinica+Rede+Mais+Sa%C3%BAde/@-1.3476489,-48.4553031,17z/data=!3m1!4b1!4m6!3m5!1s0x92a48b4d8579cd5d:0xd6d534faf344bd59!8m2!3d-1.3476543!4d-48.4527282!16s%2Fg%2F11t86npjg1?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RESTAURANTE 2 -->
+
+<div class="card">
+
+<img src="amorsaude.webp">
+
+<div class="card-content">
+
+<h3>Amor Saúde</h3>
+<p>Consultas com médicos especialistas, estrutura moderna e exames de check-up completos para cuidar da sua saúde.</p>
+
+<div class="buttons">
+
+<a href="https://www.amorsaude.com.br/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Amor+Sa%C3%BAde+Icoaraci/@-1.2979192,-48.4796488,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4650001f3cc07:0x97bf3551583d0378!8m2!3d-1.2979246!4d-48.4770739!16s%2Fg%2F11x5s7tft9?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RESTAURANTE 3 -->
+
+<div class="card">
+
+<img src="amaral.jpg">
+
+<div class="card-content">
+
+<h3>Laboratório Amaral Costa</h3>
+<p>Coleta de exames de sangue, exames de imagem e testes de rotina com alta precisão nos resultados.</p>
+
+<div class="buttons">
+
+<a href="https://www.amaralcosta.com.br/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Laborat%C3%B3rio+Amaral+Costa+-+Icoaraci/@-1.2984272,-48.4866035,17z/data=!3m1!4b1!4m6!3m5!1s0x92a464221086d6f1:0x7e634b20c99f4a23!8m2!3d-1.2984326!4d-48.4840286!16s%2Fg%2F1q5gkfj1_?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="pauloazevedo.jpg">
+
+<div class="card-content">
+
+<h3>Laboratório Paulo Azevedo</h3>
+<p>Coleta de exames de sangue, exames de imagem e testes de rotina com alta precisão nos resultados.</p>
+
+
+<div class="buttons">
+
+<a href="https://www.pauloazevedo.com.br/unidades" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Laborat%C3%B3rio+Paulo+Azevedo+-+Cidade+Jardim+I/@-1.363747,-48.4583591,15z/data=!4m10!1m2!2m1!1spaulo+azevedo+icoaraci!3m6!1s0x92a461b5ba6ec143:0x2eb7924ea0ca0355!8m2!3d-1.3531482!4d-48.4536448!15sChZwYXVsbyBhemV2ZWRvIGljb2FyYWNpIgOIAQGSAQpsYWJvcmF0b3J54AEA!16s%2Fg%2F11vs35p636?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="ruthbra.jpg">
+
+<div class="card-content">
+
+<h3>Laboratório Ruth Brazão</h3>
+<p>Coleta de exames de sangue, exames de imagem e testes de rotina com alta precisão nos resultados.</p>
+
+<div class="buttons">
+
+<a href="https://ruthbrazao.com.br/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Laborat%C3%B3rio+Ruth+Braz%C3%A3o+-+Unidade+Icoaraci/@-1.2998003,-48.4742838,17z/data=!3m1!4b1!4m6!3m5!1s0x92a466a25ac2f551:0xc576d10313404bde!8m2!3d-1.2998057!4d-48.4717089!16s%2Fg%2F11b7m9g0hw?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="bio.jpg">
+
+<div class="card-content">
+
+<h3>Bio Diagnóstico</h3>
+
+<div class="buttons">
+<p>Coleta de exames de sangue, exames de imagem e testes de rotina com alta precisão nos resultados.</p>
+<a href="https://www.biodiagnostico.med.br/sobre/fale-conosco/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Cl%C3%ADnica+Bio+Diagn%C3%B3stico+(Icoaraci)/@-1.299967,-48.4851838,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4641f3dbe074b:0x1fe1b1adc1b994de!8m2!3d-1.2999724!4d-48.4826089!16s%2Fg%2F11fy7fxxt2?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RESTAURANTE 2 -->
+
+<div class="card">
+
+<img src="coife.webp">
+
+<div class="card-content">
+
+<h3>Coife Odonto</h3>
+<p>Tratamentos completos em ambientes leves e modernos, contando com equipes especialistas e tecnologia de ponta para cuidar do seu sorriso.</p>
+<div class="buttons">
+
+<a href="https://coifeodonto.com.br/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Coife+Odonto+Icoaraci/@-1.2979587,-48.480242,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4674648069d55:0x7841402d080468fd!8m2!3d-1.2979641!4d-48.4776671!16s%2Fg%2F11grc3vblb?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RESTAURANTE 3 -->
+
+<div class="card">
+
+<img src="excellence.webp">
+
+<div class="card-content">
+
+<h3>Odonto Excellence</h3>
+<p>Tratamentos completos em ambientes leves e modernos, contando com equipes especialistas e tecnologia de ponta para cuidar do seu sorriso.</p>
+<div class="buttons">
+
+<a href="https://www.odontoexcellence.com.br/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Odonto+Excellence+Bel%C3%A9m+-+Campina+de+Icoaraci/@-1.293161,-48.4660071,17z/data=!3m1!4b1!4m6!3m5!1s0x92a467cfe94c4c5d:0x98c9cd4766b6f1d7!8m2!3d-1.2931664!4d-48.4634322!16s%2Fg%2F11p5_hych7?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="happy.webp">
+
+<div class="card-content">
+
+<h3>Happy Dent</h3>
+<p>Tratamentos completos em ambientes leves e modernos, contando com equipes especialistas e tecnologia de ponta para cuidar do seu sorriso.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/happydenticoaraci/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Happy+Dent+Icoaraci/@-1.3010521,-48.4727412,17z/data=!3m1!4b1!4m6!3m5!1s0x92a467004ab69367:0x1a2123f48a4f5bc7!8m2!3d-1.3010575!4d-48.4701663!16s%2Fg%2F11yc73yzxy?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="popdents.jpg">
+
+<div class="card-content">
+
+<h3>Popdents</h3>
+<p>Tratamentos completos em ambientes leves e modernos, contando com equipes especialistas e tecnologia de ponta para cuidar do seu sorriso.</p>
+
+<div class="buttons">
+
+<a href="https://www.popdents.com.br/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/%E2%9C%85POPdents+Icoaraci/@-1.2987343,-48.4911911,17z/data=!3m1!4b1!4m6!3m5!1s0x92a465b5da985923:0xb1f3ee187a89017c!8m2!3d-1.2987397!4d-48.4886162!16s%2Fg%2F11fk1dc95r?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="odontoliv.webp">
+
+<div class="card-content">
+
+<h3>Odontoliv</h3>
+<p>Tratamentos completos em ambientes leves e modernos, contando com equipes especialistas e tecnologia de ponta para cuidar do seu sorriso.</p>
+<div class="buttons">
+
+<a href="https://linkme.bio/odontoliv.icoaraci" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Dentista+Icoaraci+%7C+OdontOliv+Cl%C3%ADnica+Odontol%C3%B3gica/@-1.3001805,-48.4826496,17z/data=!3m1!4b1!4m6!3m5!1s0x92a465cee5b95979:0x346c9ae6e6657cbb!8m2!3d-1.3001859!4d-48.4800747!16s%2Fg%2F11twdtftqb?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="brazilandental.jpg">
+
+<div class="card-content">
+
+<h3>Brazilian Dental Group</h3>
+<p>Tratamentos completos em ambientes leves e modernos, contando com equipes especialistas e tecnologia de ponta para cuidar do seu sorriso.</p>
+<div class="buttons">
+
+<a href="https://www.instagram.com/clinicabdg/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Brazilian+Dental+Group/@-1.3019456,-48.4828109,17z/data=!3m1!4b1!4m6!3m5!1s0x92a466a8a09865fb:0x5036bb7a1368bd77!8m2!3d-1.301951!4d-48.480236!16s%2Fg%2F1pty048jn?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="odontoart.webp">
+
+<div class="card-content">
+
+<h3>OdontoArt</h3>
+<p>Tratamentos completos em ambientes leves e modernos, contando com equipes especialistas e tecnologia de ponta para cuidar do seu sorriso.</p>
+<div class="buttons">
+
+<a href="https://odontoart.com/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/OdontoArt+Cl%C3%ADnica+Odontol%C3%B3gica+Consult%C3%B3rio+Odontol%C3%B3gico+Icoaraci+%7C+Cirurgi%C3%A3o+Dentista+%7C+Pr%C3%B3teses+%7C+Clareamento/@-1.3003686,-48.4892439,17z/data=!3m1!4b1!4m6!3m5!1s0x92a46418504def33:0xb218bec4d688d54!8m2!3d-1.300374!4d-48.486669!16s%2Fg%2F11jx4s8jg0?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+</section>
+
+</section>
+
+<section class="titulo">
+    <h1>Ver mais opções</h1>
+</section>
+
+<section class="mini-grid">
+
+<!-- BANCO -->
+<div class="mini-card">
+    <h4>Dra. Anna Lopes</h4>
+    <p>(91) 98475-5496</p>
+    <p>Seg–Sex: 09h às 15h</p>
+
+    <div class="mini-buttons">
+        <a href="https://www.google.com/maps/place/Consult%C3%B3rio+Odontol%C3%B3gico+Dra.+Anna+Lopes/@-1.301599,-48.4717901,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4677453ebd747:0xfd71ac2d2ca0a044!8m2!3d-1.3016044!4d-48.4692152!16s%2Fg%2F11j4tf01hz?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">Ver no mapa</a>
+        <a href="https://www.instagram.com/draannalopes/" target="_blank" class="btn">Saiba mais</a>
+    </div>
+</div>
+
+<!-- BANCO -->
+<div class="mini-card">
+    <h4>Dra. Suellen Pena</h4>
+    <p>(91) 98297-7214</p>
+    <p>Seg–Sex: 10h às 16h</p>
+
+    <div class="mini-buttons">
+        <a href="https://www.google.com/maps/place/Clinica+odontol%C3%B3gica+Dr%C2%AA+suellen+pena/@-1.3003885,-48.4738704,17z/data=!3m1!4b1!4m6!3m5!1s0x92a467558afeaed5:0x35307d424b0bb011!8m2!3d-1.3003939!4d-48.4712955!16s%2Fg%2F11g07z_x_r?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">Ver no mapa</a>
+        <a href="https://www.instagram.com/drasuellenpena.odontologia/" target="_blank" class="btn">Saiba mais</a>
+    </div>
+</div>
+
+<div class="mini-card">
+    <h4>Dra. Ana Cláudia Silva</h4>
+    <p>(91) 99295-4831</p>
+    <p>Seg–Sex: 10h às 16h</p>
+
+    <div class="mini-buttons">
+        <a href="https://www.google.com/maps/place/Consult%C3%B3rio+Odontol%C3%B3gico+Dra+Ana+Cl%C3%A1udia+Silva/@-1.2982216,-48.4779871,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4669f65896e63:0x1a7377d4877354dc!8m2!3d-1.298227!4d-48.4754122!16s%2Fg%2F11b6hnd3gs?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">Ver no mapa</a>
+        <a href="https://www.instagram.com/consultorioanaclaudiasilva/" target="_blank" class="btn">Saiba mais</a>
+    </div>
+</div>
+
+<div class="mini-card">
+    <h4>Dra. Alba Nereida</h4>
+    <p>(91) 98547-1827</p>
+    <p>Seg–Sex: 10h às 16h</p>
+
+    <div class="mini-buttons">
+        <a href="google.com/maps?q=Consultório+Odontológico+Dra.+Alba+Nereida+-+Rua+Lopo+de+Castro,+754,+entre+4ª+e+5ª+rua+-+Cruzeiro,+Belém+-+PA,+66810-000&ftid=0x92a46508e3e1b475:0x39d37794c372f1af&entry=gps&lucs=,94211330,94203325,47071704,47069508,47084304,94206605&g_ep=CAISDTYuMTAxLjMuNDE1NjAYACDXggMqNiw5NDIxMTMzMCw5NDIwMzMyNSw0NzA3MTcwNCw0NzA2OTUwOCw0NzA4NDMwNCw5NDIwNjYwNUICQlI%3D&g_st=ic" target="_blank" class="btn btn-map">Ver no mapa</a>
+        <a href="https://www.instagram.com/clinica_sa_goes/" target="_blank" class="btn">Saiba mais</a>
+    </div>
+</div>
+
+<div class="mini-card">
+    <h4>Dra. Givia Azeredo</h4>
+    <p>(91) 98607-7607</p>
+    <p>Seg–Sex: 10h às 16h</p>
+
+    <div class="mini-buttons">
+        <a href="https://www.google.com/maps/place/Consult%C3%B3rio+Odontol%C3%B3gico+Dra.+Givia+Azeredo/@-1.2975555,-48.478808,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4656a7589e709:0xcb12770c2b8eac41!8m2!3d-1.2975609!4d-48.4762331!16s%2Fg%2F11qg4ynnsy?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">Ver no mapa</a>
+        <a href="https://www.instagram.com/dragiviaazeredo1/" target="_blank" class="btn">Saiba mais</a>
+    </div>
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Icoaraci. Desenvolvido por Lucas Gusmão.</p>
+
+</footer>
+
+
+
+</body>
+</html>

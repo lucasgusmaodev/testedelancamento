@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gastronomia</title>
+
+<style>
+
+/* VARIÁVEIS (IGUAL AO SITE PRINCIPAL) */
+:root {
+    --bg-main: #ffffff;
+    --bg-soft: #f7f7f7;
+    --card-bg: #ffffff;
+
+    --primary: #ff7a18;
+    --primary-hover: #e56710;
+
+    --text-main: #1a1a1a;
+    --text-soft: #555;
+    --text-muted: #888;
+
+    --border: #e5e5e5;
+}
+
+/* GERAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+
+body{
+    background:var(--bg-main);
+    color:var(--text-main);
+    line-height:1.6;
+}
+
+/* HEADER (PADRÃO) */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--border);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    color:var(--primary);
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+nav a{
+    color:var(--text-soft);
+    text-decoration:none;
+    margin-left:20px;
+    font-size:13px;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+/* TÍTULO (ESTILO SEÇÃO) */
+.titulo{
+    text-align:center;
+    padding:80px 8% 40px;
+}
+
+.titulo h1{
+    font-size:32px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    position:relative;
+}
+
+.titulo h1::after{
+    content:'';
+    width:50px;
+    height:3px;
+    background:var(--primary);
+    position:absolute;
+    bottom:-10px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.titulo p{
+    color:var(--text-soft);
+    margin-top:20px;
+}
+
+/* GRID */
+.grid{
+    padding:40px 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* CARD (IGUAL AO LUGARES) */
+.card{
+    background:var(--card-bg);
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    transition:0.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* FOTO */
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* CONTEÚDO */
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:var(--text-soft);
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+/* BOTÕES (PADRÃO) */
+.buttons{
+    margin-top:12px;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--primary);
+    color:#fff;
+    padding:8px 14px;
+    margin-right:8px;
+    margin-top:5px;
+    text-decoration:none;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:var(--primary-hover);
+}
+
+.btn-map{
+    background:#eee;
+    color:var(--text-main);
+}
+
+.btn-map:hover{
+    background:#ddd;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:50px;
+    background:#f2f2f2;
+    border-top:1px solid var(--border);
+    margin-top:50px;
+    color:var(--text-muted);
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="logo">Icoaraci</div>
+
+<nav>
+
+<a href="index.html">Início</a>
+
+</nav>
+
+</header>
+
+
+
+<section class="titulo">
+
+<h1>Restaurantes, cafeterias, pizzarias, bares e sorveteria</h1>
+
+<p>Algumas opções de lugares para comer.</p>
+
+</section>
+
+
+
+<section class="grid">
+
+
+
+<!-- RESTAURANTE 1 -->
+
+<div class="card">
+
+<img src="mrbrasa.jpeg">
+
+<div class="card-content">
+
+<h3>Mr. Brasa Gastronomia</h3>
+<p>Ambiente super aconchegante com música ao vivo, drinks especiais, cerveja trincando e o melhor do churrasco na brasa, com destaque para a famosa picanha nordestina.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/mr__brasa/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Mr.+Brasa+Icoaraci/@-1.2945782,-48.4909102,17z/data=!3m1!4b1!4m6!3m5!1s0x92a46424b16e9f6b:0x517a752b5a5e8fee!8m2!3d-1.2945836!4d-48.4883353!16s%2Fg%2F11cknpp5c9?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RESTAURANTE 2 -->
+
+<div class="card">
+
+<img src="orla-cafe.jpg">
+
+<div class="card-content">
+
+<h3>Orla Coffee</h3>
+<p>O ponto de encontro da Orla, unindo cafés especiais e lanches deliciosos a uma vista privilegiada para o pôr do sol, ideal para viver momentos inesquecíveis à beira do rio.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/orlacoffee_/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Orla+Cont%C3%AAiner/@-1.2974776,-48.4924214,17z/data=!4m10!1m2!2m1!1sorla+container+icoaraci!3m6!1s0x92a4650022076709:0x7f2f10da9ce294d9!8m2!3d-1.3000638!4d-48.4897286!15sChdvcmxhIGNvbnRhaW5lciBpY29hcmFjaVoZIhdvcmxhIGNvbnRhaW5lciBpY29hcmFjaZIBA2JhcpoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQydG9XV0V6Um5KaE0wSnhUMFUwTVZFeFVYUlBTRUpIVmtkR2JXSXdSUkFC4AEA-gEECAAQKA!16s%2Fg%2F11ylxspy_f?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RESTAURANTE 3 -->
+
+<div class="card">
+
+<img src="uba.jpeg">
+
+<div class="card-content">
+
+<h3>Ubá Gastronomia</h3>
+<p>Um dos restaurantes mais bonitos e elegantes de Icoaraci, destacando-se pelos pratos regionais como o pato no tucupi, feitos com ingredientes fresquinhos que vão do rio direto para a sua mesa.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/ubacozinharegional/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Ub%C3%A1+gastron%C3%B4mia/@-1.2969589,-48.4922777,17z/data=!3m1!4b1!4m6!3m5!1s0x92a465e5ffa8ae1d:0x59c55f8084a29192!8m2!3d-1.2969643!4d-48.4897028!16s%2Fg%2F11q49fqs1l?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="buriti.jpg">
+
+<div class="card-content">
+
+<h3>Buriti Gastronomia</h3>
+<p>Famoso pela maravilhosa carne de sol de filé grelhado com queijo coalho e macaxeira na manteiga de garrafa, que agora pode ser acompanhado com o exclusivo Vinho Buriti, o vinho da casa.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/buritigastronomia/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Buriti+Gastronomia/@-1.2967327,-48.4919817,17z/data=!3m1!4b1!4m6!3m5!1s0x92a465dec8fcbd59:0xabdd31aa5d45d867!8m2!3d-1.2967381!4d-48.4894068!16s%2Fg%2F11v0ryxmp9?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RESTAURANTE 2 -->
+
+<div class="card">
+
+<img src="resto-da-villa-prime.jpeg">
+
+<div class="card-content">
+
+<h3>Restô da Villa Prime</h3>
+<p>Destaca-se pelo prato exclusivo Armando Tavares, que traz filé grelhado acompanhado de arroz de chicória, purê de batata-doce, banana e farofa.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/restodavillaprime/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Rest%C3%B4+da+Villa+Prime/@-1.3000306,-48.4920001,17z/data=!3m1!4b1!4m6!3m5!1s0x92a46512ee217cd5:0x8950a617d280c62!8m2!3d-1.300036!4d-48.4894252!16s%2Fg%2F11q1qs8v0b?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RESTAURANTE 3 -->
+
+<div class="card">
+
+<img src="sapucaia.jpeg">
+
+<div class="card-content">
+
+<h3>Sapucaia</h3>
+<p>A casa faz sucesso com o Peixe Jutuba, crocante por fora e macio por dentro, servido com vinagrete fresquinho e um autêntico arroz com jambu.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/sapucaiarestaurante/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Sapucaia+Restaurante+e+Pizza/@-1.2964749,-48.4912725,17z/data=!3m1!4b1!4m6!3m5!1s0x92a465609b8d89fb:0xb8a1d93dc6a6d135!8m2!3d-1.2964803!4d-48.4886976!16s%2Fg%2F11srswvszx?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="tetto.webp">
+
+<div class="card-content">
+
+<h3>Tetto</h3>
+<p>Com uma tradição que vem desde 1990, é referência na Orla e conquista clientes há gerações com o seu icônico Peixe ao Molho de Camarão.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/tettorestaurante/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Restaurante+Tetto/@-1.2980679,-48.492115,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4643d46b09201:0x9677fc89596305fa!8m2!3d-1.2980733!4d-48.4895401!16s%2Fg%2F11bxb9r75x?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="clube.jpg">
+
+<div class="card-content">
+
+<h3>Clube do espeto</h3>
+<p>Ideal para o fim de semana, reunindo espetinhos variados, tira-gostos caprichados e cerveja gelada, acompanhado por música ao vivo e transmissão de jogos.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/clubedoespeto/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Clube+do+Espeto/@-1.3023346,-48.4839287,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4641e80884593:0x5d866cf0e9e33242!8m2!3d-1.30234!4d-48.4813538!16s%2Fg%2F119v9qz5g?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="manga.webp">
+
+<div class="card-content">
+
+<h3>Manga Itália</h3>
+<p>O melhor da gastronomia italiana com um toque paraense irresistível, onde você pode montar o seu próprio prato ou pedir o mais desejado Filé Manga Itália.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/mangaitalia.massas/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Manga+It%C3%A1lia+%7C+Restaurante/@-1.3045833,-48.4860968,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4651e54919209:0xde0701c64fd3e50a!8m2!3d-1.3045887!4d-48.4835219!16s%2Fg%2F11t9qmtvq2?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="tapi.webp">
+
+<div class="card-content">
+
+<h3>Tapiocaria Regional</h3>
+<p>Cafeteria acolhedora, servindo cafés quentinhos, tapiocas recheadas na hora, bolos e pães ideais para o café da manhã ou da tarde.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/tapiocaria_regional/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Tapiocaria+Regional+(Icoaraci)/@-1.3046427,-48.4860507,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4642265f3e0b1:0x57f3bff3800b58c6!8m2!3d-1.3046481!4d-48.4834758!16s%2Fg%2F11dxl96dlp?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="cantinho.webp">
+
+<div class="card-content">
+
+<h3>Cantinho da Tapioca</h3>
+<p>Cafeteria charmosa localizada bem na Orla de Icoaraci, de frente para o rio, perfeita para tomar um café com tapiocas, pães etc. curtindo um pôr do sol lindíssimo.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/cantinho_datapioca_/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Cantinho+da+tapioca/@-1.2940444,-48.4899732,17z/data=!3m1!4b1!4m6!3m5!1s0x92a465f9aea5d94b:0x188ec64f7868d1c5!8m2!3d-1.2940498!4d-48.4873983!16s%2Fg%2F11jllbnvgn?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="porao-italia.jpeg">
+
+<div class="card-content">
+
+<h3>Porão Itália</h3>
+<p>Em um ambiente único e elegante dentro de um porão, é a melhor pizzaria de Icoaraci, com um cardápio completo de pizzas tradicionais, especiais e especialíssimas.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/poraoitaliaoficial/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Pizzaria+Por%C3%A3o+It%C3%A1lia/@-1.2967015,-48.4915769,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4643ccda42afb:0x63ff5243016f17bd!8m2!3d-1.2967069!4d-48.489002!16s%2Fg%2F11cr_dvtmd?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="kass-pizza.jpeg">
+
+<div class="card-content">
+
+<h3>Kas pizza</h3>
+<p>Uma das pizzarias mais animadas, com um cardápio variado, espaço kids para as crianças e um tradicional rodízio completo que agita todas as sextas-feiras.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/kaspizzaicoaraci/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Kas+Pizza+Icoaraci/@-1.2967492,-48.4913813,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4650047c40baf:0xe1699b83ef89fead!8m2!3d-1.2967546!4d-48.4888064!16s%2Fg%2F11yd2jk_nj?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="artezzano.jpeg">
+
+<div class="card-content">
+
+<h3>Artezzano Forneria</h3>
+<p>Pizzaria artesanal que se destaca pelas combinações sofisticadas, com destaque para o novo e exclusivo sabor de Camarão ao Pesto Genovese.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/artezzanoforneria/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Artezzano+Pizzaria+Artezanal/@-1.3000316,-48.5000284,15z/data=!4m10!1m2!2m1!1sartezzano+forneria+icoaraci!3m6!1s0x92a465000e323041:0x86e9a8d809b9a846!8m2!3d-1.3043207!4d-48.4831403!15sChthcnRlenphbm8gZm9ybmVyaWEgaWNvYXJhY2mSARBwaXp6YV9yZXN0YXVyYW504AEA!16s%2Fg%2F11y_ql86h9?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="napanela.jpeg">
+
+<div class="card-content">
+
+<h3>Na panela</h3>
+<p>Um espaço versátil que mistura restaurante e cafeteria, com destaque para o prato mais pedido: a Picanha "Lo Chef", acompanhada de purê de abóbora, farofa de cebola roxa, macaxeira frita, rapadura e arroz branco.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/restaurantenapanela/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Restaurante+Na+Panela+de+Barro/@-1.297835,-48.4922114,17z/data=!3m1!4b1!4m6!3m5!1s0x92a465ca064d37f9:0x16efdc0c7a544076!8m2!3d-1.2978404!4d-48.4896365!16s%2Fg%2F11rzhft0zq?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="moara.jpeg">
+
+<div class="card-content">
+
+<h3>Moara Sorveteria Artesanal</h3>
+<p>Uma excelente opção para curtir com a família, oferecendo deliciosas saladas de frutas e sorvetes com casquinha a partir de R$ 10,00 para refrescar o seu dia.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/moarasorveteria/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Restaurante+Na+Panela+de+Barro/@-1.297835,-48.4922114,17z/data=!3m1!4b1!4m6!3m5!1s0x92a465ca064d37f9:0x16efdc0c7a544076!8m2!3d-1.2978404!4d-48.4896365!16s%2Fg%2F11rzhft0zq?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="maioca.jpeg">
+
+<div class="card-content">
+
+<h3>Maioca</h3>
+<p>Sorveterias tradicionais com ambientes lindos, perfeitos para saborear milkshakes caprichados, sorvetes e sobremesas deliciosas.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/sorvetesmaioca/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Maioca+-+Sorveteria+Artesanal+Icoaraci/@-1.2981318,-48.4920441,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4652e79217867:0x8494415fe148e826!8m2!3d-1.2981372!4d-48.4894692!16s%2Fg%2F11x8zncb6r?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="mag-pizzas.jpeg">
+
+<div class="card-content">
+
+<h3>Mag pizzas</h3>
+<p>Ideal para reunir toda a família, a casa oferece uma imensa variedade de sabores de pizzas salgadas e doces, além de contar com um excelente espaço kids.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/magpizzas/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Mag+Pizzas+Icoaraci/@-1.2980612,-48.4818084,17z/data=!3m1!4b1!4m6!3m5!1s0x92a466b767e2c0b7:0x5cb1b44a4700e158!8m2!3d-1.2980666!4d-48.4792335!16s%2Fg%2F11fy4dzprf?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="lachapa.jpeg">
+
+<div class="card-content">
+
+<h3>La Chapa</h3>
+<p>Um ótimo ponto de encontro que serve porções caprichadas de petiscos e pratos com frutos do mar, com destaque para a tradicional isca de peixe com vinagrete e o camarão à milanesa.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/lachapa_icoaraci/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Restaurante+%26+Peixaria+La+Chapa/@-1.2969259,-48.4922855,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4643cdea68499:0x13c7aeb7229a1509!8m2!3d-1.2969313!4d-48.4897106!16s%2Fg%2F11vbptkq85?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="foodfest.jpeg">
+
+<div class="card-content">
+
+<h3>Orla Container</h3>
+<p>Um complexo gastronômico moderno de frente para o rio que reúne vários empreendimentos no mesmo espaço, oferecendo desde cafeterias até pizzarias e restaurantes para todos os gostos.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/orlaconteiner/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Orla+Cont%C3%AAiner/@-1.3000584,-48.4923035,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4650022076709:0x7f2f10da9ce294d9!8m2!3d-1.3000638!4d-48.4897286!16s%2Fg%2F11ylxspy_f?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="resto-da-villa.jpeg">
+
+<div class="card-content">
+
+<h3>Restô da villa</h3>
+<p>O grande destaque da casa é o prato executivo de Peixe na Chapa, uma opção deliciosa, muito bem servida e cheia de sabor.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/restauranterestodavilla/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Restaurante+Rest%C3%B4+da+Villa/@-1.2966791,-48.4916801,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4643cce237df1:0xf01fec451f27b0cf!8m2!3d-1.2966845!4d-48.4891052!16s%2Fg%2F1pp2tl2jl?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="parceiros.jpeg">
+
+<div class="card-content">
+
+<h3>Parceiro's</h3>
+<p>Espaço aconchegante, ideal para curtir com amigos e família saboreando refeições completas, petiscos variados e aquela cerveja gelada.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/restauranteparceiros/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Restaurante+Parceiro's+-+Tijuca/@-1.2981609,-48.4921793,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4643d44010a89:0x2be53189a915f38d!8m2!3d-1.2981663!4d-48.4896044!16s%2Fg%2F11b6v94kct?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="mr-mix.jpg">
+
+<div class="card-content">
+
+<h3>Mr. Mix</h3>
+<p>Sorveterias tradicionais com ambientes lindos, perfeitos para saborear milkshakes caprichados, sorvetes e sobremesas deliciosas.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/mrmixicoaraci/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Mr.+Mix+Milk+Shake+-+Bel%C3%A9m+(Icoaraci+Orla)/@-1.2979262,-48.4921922,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4658f8e8d23a7:0x9e6461a4001064ca!8m2!3d-1.2979316!4d-48.4896173!16s%2Fg%2F11q2sk_rss?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="campeao.webp">
+
+<div class="card-content">
+
+<h3>Delícias da Vila</h3>
+<p>O espaço mais tradicional de Icoaraci com um cardápio super completo, servindo desde maniçoba e tacacá raiz até chapas mistas e muito mais.</p>
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/daviladelicias/" target="_blank" class="btn">
+Saiba mais
+</a>
+
+<a href="https://www.google.com/maps/place/Del%C3%ADcias+da+Vila/@-1.2978015,-48.4824709,17z/data=!3m1!4b1!4m6!3m5!1s0x92a4642014e95239:0x59e3cf830fc9c75!8m2!3d-1.2978069!4d-48.479896!16s%2Fg%2F11c0xrj3l_?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+Ver no mapa
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+<footer>
+
+<p>© 2026 Icoaraci. Desenvolvido por Lucas Gusmão.</p>
+
+</footer>
+
+
+
+</body>
+</html>
